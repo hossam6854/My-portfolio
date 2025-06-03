@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 
-/* الروابط */
 .nav-link {
   @apply hover:text-gray-300 transition;
 }
@@ -10,7 +9,6 @@
   @apply text-white text-lg py-2 w-full text-center border-b border-gray-500;
 }
 
-/* تأمين عدم تغطية المحتوى بالـ Navbar */
 .main-content {
-  margin-top: 64px; /* ارتفاع النافبار بالكامل */
+  margin-top: 64px; 
 }
