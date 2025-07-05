@@ -22,7 +22,7 @@ const projectsData = [
     image: HabitTrackerImg,
     description: "An app to track daily habits, analyze achievements, and motivate users to reach their personal goals.",
     github: "https://github.com/hossam6854/Habit_Tracker_Website",
-    demo: "https://hossam6854.github.io/Habit_Tracker_Website/",
+    demo: "https://habit-tracker-mu-lime.vercel.app/",
     accentColor: "bg-gradient-to-r from-cyan-400 to-blue-500"
   },
   {
