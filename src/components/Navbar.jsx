@@ -57,6 +57,7 @@ const Navbar = () => {
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
               Hossam Sayed
             </span>
+            
           </Link>
 
           {/* Desktop Navigation */}
