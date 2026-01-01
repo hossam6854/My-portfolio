@@ -1,211 +1,238 @@
-import { FaCode, FaServer, FaMobileAlt, FaRocket, FaGraduationCap, FaBriefcase } from "react-icons/fa";
 import { motion } from "framer-motion";
+import {
+  FaCode,
+  FaServer,
+  FaLayerGroup,
+  FaRocket,
+  FaDatabase,
+  FaCheckCircle,
+} from "react-icons/fa";
+import {
+  SiReact,
+  SiNodedotjs,
+  SiMongodb,
+  SiMysql,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
+  SiGit,
+  SiPostman,
+} from "react-icons/si";
 
 const About = () => {
-  const fadeIn = {
+  // Animation Variants
+  const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } }
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
   };
 
-  const slideUp = {
-    hidden: { y: 30, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } }
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
   };
 
-  const skills = [
-    { name: "React", level: 90, color: "from-cyan-400 to-blue-500" },
-    { name: "TypeScript", level: 85, color: "from-blue-400 to-indigo-500" },
-    { name: "JavaScript", level: 95, color: "from-yellow-400 to-amber-500" },
-    { name: "HTML5", level: 98, color: "from-orange-400 to-red-500" },
-    { name: "CSS3/Tailwind", level: 92, color: "from-blue-300 to-indigo-400" },
-    { name: "Git/GitHub", level: 88, color: "from-gray-400 to-gray-600" },
+  // Stats Data
+  const stats = [
+    { label: "Full-Stack Projects", value: "6+", icon: <FaLayerGroup /> },
+    { label: "Years Experience", value: "3+", icon: <FaCode /> }, // Adjusted based on 2021 start
+    { label: "Tech Stack", value: "MERN", icon: <FaServer /> },
   ];
 
-  const certifications = [
+  // Skills Categorized
+  const skillCategories = [
     {
-      title: "Responsive Web Design",
-      issuer: "FreeCodeCamp",
-      description: "Building responsive websites",
-      icon: <FaMobileAlt className="text-cyan-400 text-2xl" />,
-      CredentialID: "hossam74-rwd"
-
+      title: "Frontend Engineering",
+      icon: <FaCode className="text-blue-400" />,
+      skills: [
+        { name: "React.js", icon: <SiReact className="text-blue-400" />, level: "Advanced" },
+        { name: "TypeScript", icon: <SiTypescript className="text-blue-600" />, level: "Intermediate" },
+        { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" />, level: "Expert" },
+      ],
     },
     {
-      title: "Front-End Web Development",
-      issuer: "Ministry of Communications and IT",
-      description: "HTML, CSS, and JavaScript fundamentals",
-      icon: <FaCode className="text-blue-400 text-2xl" />,
-      CredentialID: "JTEMNGS3"
-
+      title: "Backend & Database",
+      icon: <FaServer className="text-green-400" />,
+      skills: [
+        { name: "Node.js", icon: <SiNodedotjs className="text-green-500" />, level: "Advanced" },
+        { name: "Express.js", icon: <SiExpress className="text-gray-400" />, level: "Advanced" },
+        { name: "MongoDB", icon: <SiMongodb className="text-green-400" />, level: "Intermediate" },
+        { name: "MySQL", icon: <SiMysql className="text-blue-500" />, level: "Intermediate" },
+      ],
     },
     {
-      title: "Digital Marketing Fundamentals",
-      issuer: "Google",
-      description: "Google's digital marketing course",
-      icon: <FaRocket className="text-purple-400 text-2xl" />,
-      CredentialID: "J36 3R2 AXZ"
-    }
+      title: "Tools & DevOps",
+      icon: <FaRocket className="text-purple-400" />,
+      skills: [
+        { name: "Git & GitHub", icon: <SiGit className="text-orange-500" />, level: "Advanced" },
+        { name: "Postman", icon: <SiPostman className="text-orange-400" />, level: "Intermediate" },
+        { name: "RESTful APIs", icon: <FaDatabase className="text-indigo-400" />, level: "Expert" },
+      ],
+    },
   ];
-
 
   const timeline = [
     {
-      year: "2023 - Present",
-      title: "Advanced Development",
-      description: "Building complex React applications and optimizing front-end performance",
-      icon: <FaCode className="text-blue-400" />
+      year: "2025 - Present",
+      title: "Full-Stack Architect",
+      role: "Freelance & Independent Developer",
+      description: "Designed, developed, and deployed 6 scalable full-stack web applications. Managing the entire lifecycle from database schema design (SQL/NoSQL) to responsive frontend implementation.",
+      tech: "Node.js, MongoDB, MySQL, React",
+      highlight: true,
     },
     {
-      year: "2022",
-      title: "Full-Stack Exploration",
-      description: "Developed full-stack applications with RESTful API integration",
-      icon: <FaServer className="text-cyan-400" />
+      year: "2023 - 2024",
+      title: "Advanced Frontend Developer",
+      role: "Specialist",
+      description: "Focused on complex UI state management, performance optimization, and integrating third-party APIs.",
+      tech: "React, Redux, Tailwind",
+      highlight: false,
     },
     {
-      year: "2021",
-      title: "Coding Journey Begins",
-      description: "Started with HTML, CSS, and JavaScript fundamentals",
-      icon: <FaGraduationCap className="text-indigo-400" />
-    }
+      year: "2021 - 2022",
+      title: "The Beginning",
+      role: "Junior Developer",
+      description: "Mastered the fundamentals of the web: HTML, CSS, and JavaScript. Built first responsive layouts.",
+      tech: "HTML, CSS, JS",
+      highlight: false,
+    },
   ];
 
   return (
-    <section className="bg-gradient-to-b from-gray-900 to-gray-800 py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Hero Section */}
+    <section className="relative min-h-screen bg-gray-900 text-gray-100 py-20 px-4 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none"></div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
+        
+        {/* 1. Header Section */}
         <motion.div
+          variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          variants={fadeIn}
+          whileInView="visible"
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.h2 
-            variants={slideUp}
-            className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 mb-6"
-          >
-            Who Am I?
+          <motion.h2 variants={itemVariants} className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-3">
+            About Me
           </motion.h2>
-          <motion.p
-            variants={slideUp}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
-          >
-            I'm <span className="font-semibold text-blue-300">Hossam Sayed</span>, a passionate <span className="font-semibold text-cyan-300">Front-End Developer</span> specializing in building <span className="font-semibold text-indigo-300">high-performance</span>, <span className="font-semibold text-purple-300">scalable</span> web applications with modern technologies.
+          <motion.h1 variants={itemVariants} className="text-4xl md:text-5xl font-bold mb-6">
+            From <span className="text-blue-400">Concept</span> to <span className="text-green-400">Deployment</span>
+          </motion.h1>
+          <motion.p variants={itemVariants} className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            I am Hossam Sayed, a <span className="text-white font-semibold">Full-Stack Developer</span> passionate about building complete web solutions. 
+            Since 2025, I have successfully delivered <span className="text-white font-semibold">6 production-ready applications</span>, handling everything from server logic to pixel-perfect UIs.
           </motion.p>
         </motion.div>
 
-        {/* Skills Section */}
-        <motion.div
+        {/* 2. Stats Grid (Highlighting Achievements) */}
+        <motion.div 
+          variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          className="mb-20"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20"
         >
-          <motion.h3
-            variants={slideUp}
-            className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500 mb-12"
-          >
-            <FaCode className="inline mr-3" /> Core Skills
-          </motion.h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={index}
-                variants={slideUp}
-                transition={{ delay: 0.1 * index }}
-                className="bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700"
-              >
-                <div className="flex justify-between mb-2">
-                  <span className="font-medium text-gray-200">{skill.name}</span>
-                  <span className="text-gray-400">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-700 rounded-full h-2.5">
-                  <div 
-                    className={`h-2.5 rounded-full bg-gradient-to-r ${skill.color}`}
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {stats.map((stat, index) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 p-6 rounded-2xl flex items-center justify-between hover:border-blue-500/50 transition-colors group"
+            >
+              <div>
+                <h3 className="text-4xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">{stat.value}</h3>
+                <p className="text-gray-400 text-sm font-medium uppercase tracking-wider">{stat.label}</p>
+              </div>
+              <div className="text-3xl text-gray-600 group-hover:text-blue-500 transition-colors bg-gray-900 p-3 rounded-lg">
+                {stat.icon}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
-        {/* Certifications */}
+        {/* 3. Tech Ecosystem (Split Front/Back) */}
         <motion.div
+          variants={containerVariants}
           initial="hidden"
-          animate="visible"
-          variants={fadeIn}
+          whileInView="visible"
+          viewport={{ once: true }}
           className="mb-20"
         >
-          <motion.h3
-            variants={slideUp}
-            className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500 mb-12"
-          >
-            <FaGraduationCap className="inline mr-3" /> Certifications
-          </motion.h3>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {certifications.map((cert, index) => (
+           <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-white">Technical Arsenal</h3>
+            <p className="text-gray-400 mt-2">The tools I use to bring ideas to life.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => (
               <motion.div
                 key={index}
-                variants={slideUp}
-                transition={{ delay: 0.1 * index }}
-                className="bg-gray-800 rounded-xl overflow-hidden shadow-xl border border-gray-700 hover:border-cyan-400 transition-all duration-300"
+                variants={itemVariants}
+                className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300"
               >
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    {cert.icon}
-                    <h4 className="text-xl font-semibold text-gray-100 ml-3">{cert.title}</h4>
-                  </div>
-                  <p className="text-gray-400 font-medium mb-2">{cert.issuer}</p>
-                  <p className="text-gray-300">{cert.description}</p>
+                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-gray-700">
+                  <div className="text-2xl">{category.icon}</div>
+                  <h4 className="text-xl font-bold text-gray-200">{category.title}</h4>
                 </div>
-                <div className="bg-gray-700 px-6 py-3 text-sm text-gray-400">
-                  Credential ID: {cert.CredentialID}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Timeline */}
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-        >
-          <motion.h3
-            variants={slideUp}
-            className="text-3xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-purple-500 mb-12"
-          >
-            <FaBriefcase className="inline mr-3" /> My Journey
-          </motion.h3>
-          
-          <div className="relative">
-            <div className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-blue-500 to-cyan-400 transform -translate-x-1/2"></div>
-            
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={slideUp}
-                  transition={{ delay: 0.1 * index }}
-                  className={`relative w-full ${index % 2 === 0 ? 'pr-12 pl-0 md:pr-0 md:pl-12' : 'pl-12 pr-0 md:pl-0 md:pr-12'}`}
-                >
-                  <div className={`bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-700 relative ${index % 2 === 0 ? 'md:ml-auto md:mr-0' : 'md:mr-auto md:ml-0'}`} style={{ maxWidth: '500px' }}>
-                    <div className="absolute -top-4 -left-4 md:left-auto md:-right-4 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg">
-                      {item.icon}
+                <div className="space-y-4">
+                  {category.skills.map((skill, idx) => (
+                    <div key={idx} className="flex items-center justify-between group">
+                      <div className="flex items-center gap-3">
+                        <span className="text-xl text-gray-500 group-hover:text-white transition-colors">{skill.icon}</span>
+                        <span className="text-gray-300 font-medium">{skill.name}</span>
+                      </div>
+                      {/* Optional: Indicator dot */}
+                      <div className={`w-2 h-2 rounded-full ${skill.level === 'Expert' ? 'bg-green-500' : 'bg-blue-500'}`}></div>
                     </div>
-                    <h4 className="text-xl font-bold text-blue-300 mb-2">{item.year}</h4>
-                    <h5 className="text-lg font-semibold text-gray-100 mb-2">{item.title}</h5>
-                    <p className="text-gray-300">{item.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
+
+        {/* 4. The Journey (Timeline) */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-white">Professional Journey</h3>
+          </div>
+          
+          <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-gray-700 before:to-transparent">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${item.highlight ? 'is-active' : ''}`}
+              >
+                {/* Icon Marker */}
+                <div className={`flex items-center justify-center w-10 h-10 rounded-full border-4 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 
+                  ${item.highlight ? 'bg-blue-500 border-blue-900 shadow-[0_0_15px_rgba(59,130,246,0.5)]' : 'bg-gray-900 border-gray-700'}`}>
+                  {item.highlight ? <FaCheckCircle className="text-white text-sm" /> : <div className="w-2 h-2 bg-gray-500 rounded-full" />}
+                </div>
+
+                {/* Content Card */}
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 bg-gray-800 rounded-xl border border-gray-700 shadow-lg hover:border-blue-500/30 transition-colors">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className={`font-bold ${item.highlight ? 'text-blue-400' : 'text-gray-300'}`}>{item.year}</span>
+                    <span className="text-xs font-mono text-gray-500 px-2 py-1 bg-gray-900 rounded">{item.tech}</span>
+                  </div>
+                  <h4 className="text-lg font-bold text-white mb-1">{item.title}</h4>
+                  <p className="text-sm text-gray-400 mb-3">{item.role}</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
