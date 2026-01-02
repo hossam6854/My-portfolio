@@ -142,6 +142,7 @@ const Home = () => {
             >
               <FaFileDownload /> Download CV
             </a>
+            
             <a
               href="#projects"
               className="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all hover:-translate-y-1 group"
