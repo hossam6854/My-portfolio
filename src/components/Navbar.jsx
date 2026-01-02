@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FiCode, FiX, FiMenu } from "react-icons/fi";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -37,6 +37,10 @@ const Navbar = () => {
       url: "https://www.linkedin.com/in/hossam-sayed-6b90a9243",
     },
     { icon: <HiOutlineMail />, url: "mailto:hosamsayedee@gmail.com" },
+    {
+    icon: <FaWhatsapp />,
+    url: "https://wa.me/201033239589",
+  },
   ];
 
   return (
@@ -57,7 +61,7 @@ const Navbar = () => {
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
               Hossam Sayed
             </span>
-            
+
           </Link>
 
           {/* Desktop Navigation */}
