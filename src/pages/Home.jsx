@@ -136,13 +136,12 @@ const Home = () => {
             className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
             <a
-              href="cvs/Hossam_Sayed_Saber_CV.pdf"
+              href="cv/Hossam_Sayed_Saber_CV.pdf"
               download
               className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-semibold shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition-all hover:-translate-y-1"
             >
               <FaFileDownload /> Download CV
             </a>
-            
             <a
               href="#projects"
               className="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white border border-gray-700 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all hover:-translate-y-1 group"
